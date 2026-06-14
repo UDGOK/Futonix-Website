@@ -5,6 +5,32 @@
   'use strict';
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ============================================================
+     MULTILINGUAL (Weglot) — EN · FR · AR (RTL) · ES
+     1) Create a free/paid project at https://weglot.com
+        Original language: English; Destinations: French, Arabic, Spanish.
+     2) Copy your API key (looks like "wg_xxxxxxxx") and paste it below.
+     Once a key is set, Weglot auto-translates every page, handles Arabic
+     right-to-left, and renders the language picker into .lang-switcher.
+     ============================================================ */
+  var WEGLOT_API_KEY = ''; /* <-- PASTE YOUR WEGLOT API KEY HERE TO GO LIVE */
+  if (WEGLOT_API_KEY) {
+    var wg = document.createElement('script');
+    wg.src = 'https://cdn.weglot.com/weglot.min.js';
+    wg.onload = function () {
+      try {
+        window.Weglot.initialize({
+          api_key: WEGLOT_API_KEY,
+          switchers: [
+            { target: '.lang-switcher', style: { type: 'dropdown', withname: true, fullname: true, with_flags: true } },
+            { target: '.lang-switcher-m', style: { type: 'dropdown', withname: true, fullname: true, with_flags: true } }
+          ]
+        });
+      } catch (e) { /* no-op */ }
+    };
+    document.head.appendChild(wg);
+  }
+
   /* ---- Dropdown nav (single source of truth, injected) ---- */
   (function buildNav() {
     const wrap = document.querySelector('.nav-wrap');
@@ -44,6 +70,7 @@
             '<div class="dropdown"><span class="dd-label">Guides, insights &amp; tools</span><div class="dd-grid">' + dd(RES) + '</div></div></li>' +
         '</ul>' +
         '<div class="nav-end">' +
+          '<div class="lang-switcher" aria-label="Language"></div>' +
           '<a href="contact" class="nav-contact ' + (here === 'contact' ? 'active' : '') + '">Contact</a>' +
           '<a href="contact" class="btn btn--primary nav-start" data-magnetic>Start a project</a>' +
           '<button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>' +
@@ -57,7 +84,8 @@
         '<a href="/">Home</a>' + mg('Solutions', SOL) +
         '<a href="about">About</a>' + mg('Resources', RES) +
         '<a href="contact">Contact</a>' +
-        '<a href="contact" class="btn btn--primary">Start a project</a>';
+        '<a href="contact" class="btn btn--primary">Start a project</a>' +
+        '<div class="lang-switcher-m" aria-label="Language" style="margin-top:10px;"></div>';
       mob.querySelectorAll('.m-trigger').forEach(t => t.addEventListener('click', () => t.closest('.m-group').classList.toggle('open')));
     }
 

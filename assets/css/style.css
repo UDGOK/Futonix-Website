@@ -703,6 +703,11 @@ body.modal-open { overflow: hidden; }
 .footer-bottom .legal a:hover { color: var(--on-dark); }
 @media (max-width: 700px) { .ai-row { flex-direction: column; align-items: flex-start; } }
 
+/* ---------- Language switcher (Weglot target) ---------- */
+.lang-switcher, .lang-switcher-m { display: inline-flex; align-items: center; }
+.lang-switcher:empty, .lang-switcher-m:empty { display: none; }
+.lang-switcher [class^="wg"], .lang-switcher-m [class^="wg"] { font-family: var(--font) !important; }
+
 @media (max-width: 900px) {
   .stat-callouts, .trust-strip { grid-template-columns: repeat(2, 1fr); }
   .loc-grid { grid-template-columns: 1fr; }
