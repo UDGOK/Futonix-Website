@@ -278,6 +278,54 @@
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
   }
 
+  /* ---- Cost & timeline estimator (indicative only) ---- */
+  const est = document.querySelector('[data-estimator]');
+  if (est) {
+    const state = { type: 'healthcare', scope: 'design-build', size: 8000 };
+    const TYPE = {
+      healthcare:   { label: 'Healthcare', base: 14, perK: 0.55, tier: 3 },
+      warehouse:    { label: 'Warehouse / Distribution', base: 10, perK: 0.18, tier: 2 },
+      commercial:   { label: 'Commercial / Retail', base: 9,  perK: 0.35, tier: 2 },
+      multifamily:  { label: 'Multifamily', base: 16, perK: 0.30, tier: 3 },
+      technology:   { label: 'Technology / Automation', base: 6, perK: 0.25, tier: 2 }
+    };
+    const SCOPE = { 'design-build': 1.0, 'build-only': 0.82, 'tech-only': 0.55, 'renovation': 0.9 };
+    const fmtK = (n) => n >= 1000 ? (n / 1000).toFixed(n % 1000 === 0 ? 0 : 1) + 'k' : n;
+    const tierStr = (t) => '$'.repeat(t) + '·'.repeat(0); // not used; kept simple
+    const compute = () => {
+      const t = TYPE[state.type]; const sc = SCOPE[state.scope] || 1;
+      const weeks = (t.base + (state.size / 1000) * t.perK) * sc;
+      const lo = Math.max(4, Math.round(weeks * 0.85));
+      const hi = Math.round(weeks * 1.2);
+      let tier = t.tier + (state.size > 30000 ? 1 : 0) + (state.scope === 'tech-only' ? -1 : 0);
+      tier = Math.min(4, Math.max(1, tier));
+      return { weeks: lo + '–' + hi + ' weeks', tier: '$'.repeat(tier) + ' ' + ['Entry','Mid','Significant','Major'][tier - 1] };
+    };
+    const render = () => {
+      const r = compute();
+      const set = (s, v) => { const e = est.querySelector(s); if (e) e.textContent = v; };
+      set('[data-ro-type]', TYPE[state.type].label);
+      set('[data-ro-scope]', state.scope.replace('-', ' '));
+      set('[data-ro-size]', fmtK(state.size) + ' sq ft');
+      set('[data-ro-timeline]', r.weeks);
+      set('[data-ro-tier]', r.tier);
+    };
+    est.addEventListener('click', (e) => {
+      const opt = e.target.closest('.est-opt'); if (!opt) return;
+      const g = opt.dataset.group;
+      est.querySelectorAll('.est-opt[data-group="' + g + '"]').forEach(o => o.classList.remove('active'));
+      opt.classList.add('active');
+      state[g] = opt.dataset.val; render();
+    });
+    const sizeEl = est.querySelector('#estSize');
+    if (sizeEl) sizeEl.addEventListener('input', () => {
+      state.size = parseInt(sizeEl.value, 10);
+      const v = est.querySelector('[data-size-val]'); if (v) v.textContent = fmtK(state.size) + ' sq ft';
+      render();
+    });
+    render();
+  }
+
   /* ---- Year ---- */
   const y = document.querySelector('[data-year]');
   if (y) y.textContent = new Date().getFullYear();

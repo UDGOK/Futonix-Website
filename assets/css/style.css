@@ -530,6 +530,69 @@ body.modal-open { overflow: hidden; }
 .market-chip { font-size: .85rem; font-weight: 500; padding: 10px 18px; border-radius: var(--pill); border: 1px solid var(--line-2); color: var(--ink-64); transition: background .3s var(--ease), color .3s, transform .3s var(--ease), border-color .3s; }
 .market-chip:hover { background: var(--ink); color: var(--on-dark); border-color: var(--ink); transform: translateY(-2px); }
 
+/* ============================================================
+   FUTURE-TECH POLISH — promise band, radar map, estimator
+   ============================================================ */
+:root { --mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace; }
+
+/* 2-business-day promise band */
+.promise { position: relative; overflow: hidden; border-radius: var(--radius-lg); padding: clamp(34px,5vw,52px); background: var(--ink); color: var(--on-dark);
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: clamp(22px,4vw,48px); }
+.promise::after { content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
+  background: repeating-linear-gradient(180deg, transparent 0 3px, rgba(255,255,255,.03) 3px 4px); }
+.promise .pulse { width: 88px; height: 88px; border-radius: 50%; display: grid; place-items: center; position: relative; flex: none; }
+.promise .pulse b { font-family: var(--font); font-weight: 700; font-size: 2.6rem; color: var(--on-dark); position: relative; z-index: 2; }
+.promise .pulse::before, .promise .pulse::after { content:""; position:absolute; inset:0; border-radius:50%; border:1.5px solid #2DD4BF; }
+.promise .pulse::before { animation: ring 2.4s var(--ease) infinite; }
+.promise .pulse::after { animation: ring 2.4s var(--ease) infinite 1.2s; }
+@keyframes ring { 0% { transform: scale(.7); opacity:.9; } 100% { transform: scale(1.6); opacity:0; } }
+.promise .ptext { position: relative; z-index: 1; }
+.promise .ptext .k { font-family: var(--mono); font-size: .74rem; letter-spacing: .22em; text-transform: uppercase; color: #5EEAD4; }
+.promise .ptext h3 { font-size: clamp(1.3rem,2.4vw,1.9rem); color: var(--on-dark); margin: 8px 0 6px; letter-spacing: -.02em; }
+.promise .ptext p { color: var(--on-64); font-size: .95rem; max-width: 48ch; }
+.promise .pcta { position: relative; z-index: 1; }
+@media (max-width: 760px) { .promise { grid-template-columns: 1fr; text-align: left; gap: 20px; } }
+
+/* Radar / reach map */
+.radar { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius-lg); overflow: hidden; background: var(--ink); border: 1px solid var(--glass-brd, rgba(255,255,255,.08)); }
+.radar svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.radar .dot { fill: rgba(94,234,212,.18); }
+.radar .sweep { transform-origin: 50% 56%; animation: sweep 6s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+.radar .pin { cursor: pointer; }
+.radar .pin .ping { fill: none; stroke: #2DD4BF; stroke-width: 1.2; opacity: 0; transform-box: fill-box; transform-origin: center; animation: ping 2.8s var(--ease) infinite; }
+.radar .pin:nth-child(2) .ping { animation-delay: .5s; } .radar .pin:nth-child(3) .ping { animation-delay: 1s; }
+.radar .pin:nth-child(4) .ping { animation-delay: 1.5s; } .radar .pin:nth-child(5) .ping { animation-delay: 2s; }
+@keyframes ping { 0% { r: 4; opacity:.9; } 100% { r: 26; opacity:0; } }
+.radar .pin .core { fill: #5EEAD4; }
+.radar .pin .lbl { fill: #EAEEF7; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; opacity: .85; }
+.radar .pin:hover .core { fill: #fff; }
+.radar-legend { position: absolute; left: 22px; bottom: 18px; font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: #5EEAD4; display: flex; align-items: center; gap: 8px; }
+.radar-legend i { width: 7px; height: 7px; border-radius: 50%; background: #5EEAD4; box-shadow: 0 0 10px #2DD4BF; }
+
+/* Estimator console */
+.estimator { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.est-controls { display: grid; gap: 22px; align-content: start; }
+.est-group .est-label { font-family: var(--mono); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-45); margin-bottom: 12px; }
+.est-opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.est-opt { font-size: .85rem; font-weight: 500; padding: 9px 15px; border-radius: var(--pill); border: 1px solid var(--line-2); background: transparent; color: var(--ink-64); cursor: pointer; transition: all .25s var(--ease); }
+.est-opt:hover { border-color: var(--ink); color: var(--ink); }
+.est-opt.active { background: var(--ink); color: var(--on-dark); border-color: var(--ink); }
+.est-range input[type=range] { width: 100%; accent-color: #1F9E89; }
+.est-range .val { font-family: var(--mono); font-weight: 500; color: var(--ink); margin-top: 8px; }
+.est-readout { background: var(--ink); color: var(--on-dark); border-radius: var(--radius-lg); padding: 32px; position: relative; overflow: hidden; }
+.est-readout::after { content:""; position:absolute; inset:0; pointer-events:none; background: repeating-linear-gradient(180deg, transparent 0 3px, rgba(255,255,255,.03) 3px 4px); }
+.est-readout .ro-k { font-family: var(--mono); font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: #5EEAD4; }
+.est-readout .ro-big { font-family: var(--font); font-weight: 600; font-size: clamp(1.8rem,4vw,2.8rem); letter-spacing: -.03em; margin: 6px 0 4px; }
+.est-readout .ro-line { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--on-line); font-size: .95rem; }
+.est-readout .ro-line:last-of-type { border-bottom: none; }
+.est-readout .ro-line .v { font-family: var(--mono); color: var(--on-dark); }
+.est-readout .ro-note { color: var(--on-64); font-size: .8rem; margin-top: 18px; line-height: 1.5; }
+.est-readout .btn { margin-top: 20px; }
+@media (max-width: 760px) { .estimator { grid-template-columns: 1fr; } }
+.promise .btn--primary, .est-readout .btn--primary { background: var(--on-dark); color: var(--ink); }
+.promise .btn--primary:hover, .est-readout .btn--primary:hover { background: transparent; color: var(--on-dark); border-color: var(--on-dark); }
+
 @media (max-width: 900px) {
   .stat-callouts, .trust-strip { grid-template-columns: repeat(2, 1fr); }
   .loc-grid { grid-template-columns: 1fr; }

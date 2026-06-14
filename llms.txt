@@ -24,6 +24,7 @@ Tennessee, Washington, Arkansas and Missouri, and is resourced to scale to new m
 - [Projects](https://udgok.github.io/Futonix-Website/projects.html): Real selected work across the U.S.
 - [Where we work](https://udgok.github.io/Futonix-Website/locations.html): U.S. footprint — OK, TN, WA, AR, MO.
 - [About](https://udgok.github.io/Futonix-Website/about.html): The design-build approach.
+- [Estimate](https://udgok.github.io/Futonix-Website/estimate.html): Interactive estimator — indicative timeline & budget tier; real estimate within 2 business days.
 - [Contact](https://udgok.github.io/Futonix-Website/contact.html): Start a project enquiry.
 
 ## Selected projects

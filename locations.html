@@ -21,7 +21,7 @@
   <meta name="theme-color" content="#D0E1EB" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="alternate" type="application/rss+xml" title="Futonix" href="feed.xml" />
   <!-- ⚠️ Street address, phone and hours are placeholders — add real office details. -->
@@ -81,6 +81,31 @@
         <p class="updated" data-reveal data-d="2" style="margin-top:18px;">Last updated 14 June 2026</p>
       </div>
     </header>
+
+    <section class="section--tight">
+      <div class="container">
+        <div class="section-head" data-reveal><span class="eyebrow">Live reach</span><h2 style="margin-top:18px;">Where we're building.</h2></div>
+        <div class="radar" role="img" aria-label="Map of U.S. states where Futonix has delivered projects: Washington, Missouri, Arkansas, Oklahoma and Tennessee." data-reveal>
+          <svg viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <pattern id="rgrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="rgba(94,234,212,.06)" stroke-width="1"/></pattern>
+              <radialGradient id="rsweep" cx="0%" cy="0%" r="100%"><stop offset="0%" stop-color="#2DD4BF" stop-opacity=".35"/><stop offset="100%" stop-color="#2DD4BF" stop-opacity="0"/></radialGradient>
+            </defs>
+            <rect width="800" height="450" fill="url(#rgrid)"/>
+            <g fill="none" stroke="rgba(94,234,212,.12)"><circle cx="400" cy="252" r="120"/><circle cx="400" cy="252" r="210"/><circle cx="400" cy="252" r="300"/></g>
+            <g class="sweep"><path d="M400 252 L400 -48 A300 300 0 0 1 700 252 Z" fill="url(#rsweep)"/></g>
+            <g class="pins">
+              <g class="pin"><circle class="ping" cx="150" cy="100" r="4"/><circle class="core" cx="150" cy="100" r="4"/><text class="lbl" x="166" y="104">Washington · WA</text></g>
+              <g class="pin"><circle class="ping" cx="505" cy="205" r="4"/><circle class="core" cx="505" cy="205" r="4"/><text class="lbl" x="521" y="209">Missouri · MO</text></g>
+              <g class="pin"><circle class="ping" cx="500" cy="262" r="4"/><circle class="core" cx="500" cy="262" r="4"/><text class="lbl" x="516" y="266">Arkansas · AR</text></g>
+              <g class="pin"><circle class="ping" cx="435" cy="278" r="4"/><circle class="core" cx="435" cy="278" r="4"/><text class="lbl" x="451" y="282">Oklahoma · OK</text></g>
+              <g class="pin"><circle class="ping" cx="568" cy="234" r="4"/><circle class="core" cx="568" cy="234" r="4"/><text class="lbl" x="584" y="238">Tennessee · TN</text></g>
+            </g>
+          </svg>
+          <div class="radar-legend"><i></i>5 states · live projects</div>
+        </div>
+      </div>
+    </section>
 
     <section class="section--tight">
       <div class="container">
