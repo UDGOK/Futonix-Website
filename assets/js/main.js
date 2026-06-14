@@ -89,15 +89,26 @@
       mob.querySelectorAll('.m-trigger').forEach(t => t.addEventListener('click', () => t.closest('.m-group').classList.toggle('open')));
     }
 
-    const closeAll = () => wrap.querySelectorAll('.has-dropdown.open').forEach(o => { o.classList.remove('open'); o.querySelector('.nav-trigger').setAttribute('aria-expanded', 'false'); });
-    wrap.querySelectorAll('.has-dropdown .nav-trigger').forEach(btn => {
+    const setOpen = (li, on) => { li.classList.toggle('open', on); li.querySelector('.nav-trigger').setAttribute('aria-expanded', String(on)); };
+    const closeAll = (except) => wrap.querySelectorAll('.has-dropdown.open').forEach(o => { if (o !== except) setOpen(o, false); });
+    const canHover = matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    wrap.querySelectorAll('.has-dropdown').forEach(li => {
+      const btn = li.querySelector('.nav-trigger');
+      let timer;
+      if (canHover) {
+        // Hover-intent: open on enter, but only close after a grace delay so
+        // moving the pointer across the gap to a submenu item never drops it.
+        li.addEventListener('mouseenter', () => { clearTimeout(timer); closeAll(li); setOpen(li, true); });
+        li.addEventListener('mouseleave', () => { clearTimeout(timer); timer = setTimeout(() => setOpen(li, false), 280); });
+      }
+      // Click/tap toggles — works on touch and as a fast toggle on desktop.
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        const li = btn.closest('.has-dropdown');
+        clearTimeout(timer);
         const willOpen = !li.classList.contains('open');
-        closeAll();
-        li.classList.toggle('open', willOpen);
-        btn.setAttribute('aria-expanded', String(willOpen));
+        closeAll(li);
+        setOpen(li, willOpen);
       });
     });
     document.addEventListener('click', (e) => { if (!e.target.closest('.has-dropdown')) closeAll(); });
