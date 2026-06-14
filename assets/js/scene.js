@@ -163,6 +163,16 @@ function init(mount, wrap) {
     }, { passive: true });
   }
 
+  // ---- Scroll reactivity (rotate / sink / fade as the hero scrolls away) ----
+  let scrollP = 0;
+  const heroEl = document.querySelector('.hero');
+  const onHeroScroll = () => {
+    const hh = (heroEl && heroEl.offsetHeight) || window.innerHeight;
+    scrollP = Math.min(window.scrollY / hh, 1);
+  };
+  window.addEventListener('scroll', onHeroScroll, { passive: true });
+  onHeroScroll();
+
   // ---- Pause when off-screen ----
   let visible = true;
   if ('IntersectionObserver' in window) {
@@ -182,11 +192,11 @@ function init(mount, wrap) {
     requestAnimationFrame(tick);
     if (!visible) return;
     const t = clock.getElapsedTime();
-    city.position.y = Math.sin(t * 0.6) * 0.08;
-    city.rotation.y = Math.sin(t * 0.14) * 0.12;
     cx += (tx - cx) * 0.04; cy += (ty - cy) * 0.04;
-    city.rotation.y += cx * 0.22;
+    city.position.y = Math.sin(t * 0.6) * 0.08 - scrollP * 0.7;        // sink on scroll
+    city.rotation.y = Math.sin(t * 0.14) * 0.12 + cx * 0.22 + scrollP * 0.5; // turn on scroll
     city.rotation.x = cy * 0.05;
+    mount.style.opacity = (1 - scrollP * 0.65).toFixed(3);            // fade out
     for (const hub of hubs) hub.rotation.z += 0.02;
     renderer.render(scene, cam);
   };
