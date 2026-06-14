@@ -9,6 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script type="importmap">
+  { "imports": { "three": "./assets/js/vendor/three.module.js" } }
+  </script>
 </head>
 <body>
   <div class="nav-wrap">
@@ -52,6 +55,23 @@
             <div class="media-stat"><div class="num">3-in-1</div><div class="label">Design · Build · Automate</div></div>
             <span class="media-tag">Integrated delivery</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SCROLL-SCRUBBED "ONE TEAM" SEQUENCE ============ -->
+    <section class="buildseq" data-buildseq aria-label="From brief to switched-on">
+      <div class="buildseq-stage">
+        <div class="buildseq-canvas" aria-hidden="true"></div>
+        <div class="buildseq-overlay">
+          <span class="eyebrow" style="justify-content:center;">One team, end to end</span>
+          <div class="buildseq-steps">
+            <article class="buildseq-step active"><span class="n">01 — Discover</span><h3>Decoded.</h3><p>Brief, site and constraints modelled before anything moves.</p></article>
+            <article class="buildseq-step"><span class="n">02 — Design</span><h3>Engineered together.</h3><p>Architecture, MEP and automation in one clash-free model.</p></article>
+            <article class="buildseq-step"><span class="n">03 — Build</span><h3>Self-performed.</h3><p>Lean delivery, full transparency, no handoff loss.</p></article>
+            <article class="buildseq-step"><span class="n">04 — Automate</span><h3>Switched on.</h3><p>Commissioned, connected and handed over as a living building.</p></article>
+          </div>
+          <span class="buildseq-hint" aria-hidden="true">Scroll</span>
         </div>
       </div>
     </section>
@@ -120,5 +140,6 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script type="module" src="assets/js/buildseq.js"></script>
 </body>
 </html>

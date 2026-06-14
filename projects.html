@@ -9,6 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script type="importmap">
+  { "imports": { "three": "./assets/js/vendor/three.module.js" } }
+  </script>
 </head>
 <body>
   <div class="nav-wrap">
@@ -37,6 +40,22 @@
         <p class="lead" data-reveal data-d="2" style="margin-top:24px;">A snapshot of buildings we've designed, built and switched on — across three sectors and four continents.</p>
       </div>
     </header>
+
+    <!-- ============ SCROLL-SCRUBBED SECTOR SHOWCASE ============ -->
+    <section class="buildseq" data-buildseq data-mode="sectors" aria-label="The sectors we build">
+      <div class="buildseq-stage">
+        <div class="buildseq-canvas" aria-hidden="true"></div>
+        <div class="buildseq-overlay">
+          <span class="eyebrow" style="justify-content:center;">Across three sectors</span>
+          <div class="buildseq-steps">
+            <article class="buildseq-step active"><span class="n">Medical &amp; Healthcare</span><h3>Clinical-grade.</h3><p>ISO theatres, labs and cleanrooms — compliance engineered in.</p></article>
+            <article class="buildseq-step"><span class="n">Warehouse &amp; Logistics</span><h3>Built for throughput.</h3><p>Big-span distribution, cold-chain and dock automation at scale.</p></article>
+            <article class="buildseq-step"><span class="n">Hospitality &amp; Leisure</span><h3>Made to remember.</h3><p>Hotels and venues where atmosphere meets operations.</p></article>
+          </div>
+          <span class="buildseq-hint" aria-hidden="true">Scroll</span>
+        </div>
+      </div>
+    </section>
 
     <section class="section--tight">
       <div class="container">
@@ -114,5 +133,6 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script type="module" src="assets/js/buildseq.js"></script>
 </body>
 </html>
