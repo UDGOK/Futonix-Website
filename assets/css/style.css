@@ -263,10 +263,11 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); letter-spacing: -.02em; font-weight:
 .reveal-mask[data-d="1"] > span { transition-delay: .09s; }
 .reveal-mask[data-d="2"] > span { transition-delay: .18s; }
 
-/* isometric scene */
-.scene { position: relative; z-index: 1; width: min(960px, 94vw); margin: 40px auto 0; }
+/* isometric scene — full-bleed, cinematic (BIM + robotics) */
+.scene { position: relative; z-index: 1; left: 50%; margin-left: -50vw; width: 100vw; margin-top: clamp(20px, 3.5vw, 48px); }
 .scene svg { width: 100%; height: auto; overflow: visible; }
-.scene-canvas { width: 100%; aspect-ratio: 960 / 540; }
+.scene-canvas { width: 100%; aspect-ratio: 16 / 7; max-height: 76vh; min-height: 340px; }
+@media (max-width: 700px) { .scene-canvas { aspect-ratio: 4 / 3; min-height: 300px; } }
 .scene-canvas canvas { width: 100% !important; height: 100% !important; display: block; }
 .scene.webgl .scene-fallback { display: none; }
 .scene:not(.webgl) .scene-canvas { display: none; }
