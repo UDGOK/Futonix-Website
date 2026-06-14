@@ -173,6 +173,64 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); letter-spacing: -.02em; font-weight:
 .mobile-menu a:hover, .mobile-menu a.active { background: var(--tint-2); color: var(--ink); }
 .mobile-menu .btn { margin-top: 10px; justify-content: center; }
 
+/* ============================================================
+   DROPDOWN NAV (reorc-style, animated) — overrides flat nav
+   ============================================================ */
+.nav-menu { list-style: none; display: flex; align-items: center; gap: clamp(4px, 1.4vw, 18px); margin: 0; padding: 0; }
+.nav-menu > li { position: relative; display: flex; }
+.nav-menu > li > a, .nav-trigger {
+  display: inline-flex; align-items: center; gap: 7px; font-family: var(--font); font-size: .92rem; font-weight: 500;
+  letter-spacing: .005em; color: var(--ink-64); padding: 10px 13px; background: none; border: none; cursor: pointer; line-height: 1;
+  transition: color .25s var(--ease); border-radius: 10px;
+}
+.nav-menu > li > a::after, .nav-trigger::after { display: none !important; }
+.nav-menu > li > a:hover, .nav-trigger:hover, .nav-menu > li.open .nav-trigger,
+.nav-menu > li > a.active, .nav-menu > li.has-active .nav-trigger { color: var(--ink); }
+.nav-trigger svg { width: 11px; height: 11px; transition: transform .4s var(--ease); }
+.nav-menu > li.open .nav-trigger svg, .has-dropdown:hover .nav-trigger svg { transform: rotate(180deg); }
+
+/* dropdown panel */
+.dropdown { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(10px);
+  width: 480px; background: rgba(222,232,240,.92); backdrop-filter: blur(22px) saturate(150%); border: 1px solid var(--line-2);
+  border-radius: var(--radius-lg); box-shadow: 0 34px 80px -30px rgba(5,4,25,.5); padding: 12px;
+  opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .35s var(--ease), transform .4s var(--ease-out), visibility .35s; z-index: 60; }
+.dropdown::before { content: ""; position: absolute; top: -10px; left: 0; right: 0; height: 14px; } /* hover bridge */
+.has-dropdown:hover .dropdown, .has-dropdown.open .dropdown, .has-dropdown:focus-within .dropdown {
+  opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+.dd-label { display: block; font-family: var(--mono); font-size: .64rem; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-45); padding: 8px 14px 8px; }
+.dd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.dd-grid a { display: block; padding: 11px 14px; border-radius: 12px; opacity: 0; transform: translateY(10px);
+  transition: background .25s, opacity .4s var(--ease-out), transform .4s var(--ease-out); }
+.has-dropdown:hover .dd-grid a, .has-dropdown.open .dd-grid a, .has-dropdown:focus-within .dd-grid a { opacity: 1; transform: none; }
+.has-dropdown:hover .dd-grid a:nth-child(1), .has-dropdown.open .dd-grid a:nth-child(1) { transition-delay: .03s; }
+.has-dropdown:hover .dd-grid a:nth-child(2), .has-dropdown.open .dd-grid a:nth-child(2) { transition-delay: .06s; }
+.has-dropdown:hover .dd-grid a:nth-child(3), .has-dropdown.open .dd-grid a:nth-child(3) { transition-delay: .09s; }
+.has-dropdown:hover .dd-grid a:nth-child(4), .has-dropdown.open .dd-grid a:nth-child(4) { transition-delay: .12s; }
+.has-dropdown:hover .dd-grid a:nth-child(5), .has-dropdown.open .dd-grid a:nth-child(5) { transition-delay: .15s; }
+.has-dropdown:hover .dd-grid a:nth-child(6), .has-dropdown.open .dd-grid a:nth-child(6) { transition-delay: .18s; }
+.has-dropdown:hover .dd-grid a:nth-child(7), .has-dropdown.open .dd-grid a:nth-child(7) { transition-delay: .21s; }
+.has-dropdown:hover .dd-grid a:nth-child(8), .has-dropdown.open .dd-grid a:nth-child(8) { transition-delay: .24s; }
+.dd-grid a:hover { background: var(--tint-2); }
+.dd-grid a b { display: block; font-weight: 500; font-size: .92rem; color: var(--ink); letter-spacing: -.01em; }
+.dd-grid a span { display: block; font-size: .77rem; color: var(--ink-45); margin-top: 3px; line-height: 1.35; }
+
+.nav-end { display: flex; align-items: center; gap: clamp(10px, 1.6vw, 18px); }
+.nav-contact { font-size: .92rem; font-weight: 500; color: var(--ink-64); transition: color .25s; }
+.nav-contact:hover, .nav-contact.active { color: var(--ink); }
+
+/* mobile dropdown accordions */
+.m-group > .m-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 15px 16px; border-radius: 12px;
+  font-family: var(--font); font-weight: 500; letter-spacing: .04em; text-transform: uppercase; font-size: .82rem; color: var(--ink-64); background: none; border: none; cursor: pointer; }
+.m-group > .m-trigger svg { width: 14px; height: 14px; transition: transform .35s var(--ease); }
+.m-group.open > .m-trigger { color: var(--ink); }
+.m-group.open > .m-trigger svg { transform: rotate(180deg); }
+.m-sub { overflow: hidden; max-height: 0; transition: max-height .4s var(--ease); }
+.m-group.open .m-sub { max-height: 640px; }
+.m-sub a { display: block !important; padding: 12px 16px 12px 30px !important; font-size: .8rem !important; color: var(--ink-45) !important; text-transform: none !important; letter-spacing: 0 !important; }
+
+@media (max-width: 900px) { .nav-menu, .nav-contact, .nav .nav-start { display: none; } .nav-toggle { display: flex; } }
+@media (min-width: 901px) { .mobile-menu { display: none !important; } .nav-toggle { display: none; } }
+
 /* ---------- Hero ---------- */
 .hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 140px 0 70px; overflow: hidden; }
 .hero-inner { position: relative; z-index: 3; max-width: 1040px; padding-inline: 28px; }

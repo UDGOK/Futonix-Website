@@ -5,6 +5,77 @@
   'use strict';
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---- Dropdown nav (single source of truth, injected) ---- */
+  (function buildNav() {
+    const wrap = document.querySelector('.nav-wrap');
+    if (!wrap) return;
+    const here = (location.pathname.split('/').pop() || 'index.html').toLowerCase() || 'index.html';
+    const SOL = [
+      ['Sectors', 'Healthcare · Warehouse · Commercial', 'sectors.html'],
+      ['Expertise', 'Design-build, GC, CM &amp; automation', 'expertise.html'],
+      ['Projects', 'Selected work across the U.S.', 'projects.html'],
+      ['Design-Build Automation', 'What it is &amp; how it works', 'design-build-automation.html'],
+      ['Healthcare Controls', 'Smart building tech for clinics', 'healthcare-building-controls.html'],
+      ['Project Estimator', 'Indicative timeline &amp; budget', 'estimate.html'],
+      ['Where We Work', 'U.S. reach &amp; global focus', 'locations.html']
+    ];
+    const RES = [
+      ['Resources Hub', 'Guides, insights &amp; tools', 'resources.html'],
+      ['Knowledge Base', 'Searchable FAQs by topic', 'knowledge-base.html'],
+      ['Design-Build vs. GC', 'How Futonix compares', 'design-build-vs-general-contractor.html'],
+      ['BIM for Healthcare', 'Technical insight', 'bim-for-healthcare.html'],
+      ['OSHA &amp; Clinic Build-Outs', 'Safety commentary', 'osha-clinic-buildouts.html'],
+      ['2026 Warehouse Report', 'Original research', 'research-2026-warehouse-automation.html'],
+      ['Capabilities (PDF)', 'One-page line card', 'capabilities.html'],
+      ['Design-Build in Oklahoma', 'Local projects &amp; credentials', 'design-build-oklahoma.html']
+    ];
+    const chev = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    const inGroup = (a) => a.some(i => i[2] === here);
+    const dd = (a) => a.map(i => '<a href="' + i[2] + '"' + (i[2] === here ? ' aria-current="page"' : '') + '><b>' + i[0] + '</b><span>' + i[1] + '</span></a>').join('');
+    wrap.innerHTML =
+      '<nav class="nav" aria-label="Primary">' +
+        '<a href="index.html" class="brand" aria-label="Futonix — home"><span class="mark" aria-hidden="true"></span>Futonix</a>' +
+        '<ul class="nav-menu">' +
+          '<li><a href="index.html" class="' + (here === 'index.html' ? 'active' : '') + '">Home</a></li>' +
+          '<li class="has-dropdown' + (inGroup(SOL) ? ' has-active' : '') + '"><button class="nav-trigger" aria-expanded="false" aria-haspopup="true">Solutions ' + chev + '</button>' +
+            '<div class="dropdown"><span class="dd-label">What we offer</span><div class="dd-grid">' + dd(SOL) + '</div></div></li>' +
+          '<li><a href="about.html" class="' + (here === 'about.html' ? 'active' : '') + '">About</a></li>' +
+          '<li class="has-dropdown' + (inGroup(RES) ? ' has-active' : '') + '"><button class="nav-trigger" aria-expanded="false" aria-haspopup="true">Resources ' + chev + '</button>' +
+            '<div class="dropdown"><span class="dd-label">Guides, insights &amp; tools</span><div class="dd-grid">' + dd(RES) + '</div></div></li>' +
+        '</ul>' +
+        '<div class="nav-end">' +
+          '<a href="contact.html" class="nav-contact ' + (here === 'contact.html' ? 'active' : '') + '">Contact</a>' +
+          '<a href="contact.html" class="btn btn--primary nav-start" data-magnetic>Start a project</a>' +
+          '<button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>' +
+        '</div>' +
+      '</nav>';
+
+    const mob = document.querySelector('.mobile-menu');
+    if (mob) {
+      const mg = (label, a) => '<div class="m-group"><button class="m-trigger" type="button">' + label + ' ' + chev + '</button><div class="m-sub">' + a.map(i => '<a href="' + i[2] + '">' + i[0] + '</a>').join('') + '</div></div>';
+      mob.innerHTML =
+        '<a href="index.html">Home</a>' + mg('Solutions', SOL) +
+        '<a href="about.html">About</a>' + mg('Resources', RES) +
+        '<a href="contact.html">Contact</a>' +
+        '<a href="contact.html" class="btn btn--primary">Start a project</a>';
+      mob.querySelectorAll('.m-trigger').forEach(t => t.addEventListener('click', () => t.closest('.m-group').classList.toggle('open')));
+    }
+
+    const closeAll = () => wrap.querySelectorAll('.has-dropdown.open').forEach(o => { o.classList.remove('open'); o.querySelector('.nav-trigger').setAttribute('aria-expanded', 'false'); });
+    wrap.querySelectorAll('.has-dropdown .nav-trigger').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const li = btn.closest('.has-dropdown');
+        const willOpen = !li.classList.contains('open');
+        closeAll();
+        li.classList.toggle('open', willOpen);
+        btn.setAttribute('aria-expanded', String(willOpen));
+      });
+    });
+    document.addEventListener('click', (e) => { if (!e.target.closest('.has-dropdown')) closeAll(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(); });
+  })();
+
   /* ---- Navbar scroll state ---- */
   const navWrap = document.querySelector('.nav-wrap');
   if (navWrap) {
@@ -180,7 +251,9 @@
       setBusy(true);
       try {
         const res = await fetch(endpoint, {
-          method: 'POST', body: fd, headers: { Accept: 'application/json' }
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(data)
         });
         if (res.ok) { showSuccess(); }
         else {
@@ -330,11 +403,20 @@
   const gate = document.querySelector('[data-gate-form]');
   if (gate) {
     const ok = gate.parentElement.querySelector('.form-success');
-    gate.addEventListener('submit', (e) => {
+    gate.addEventListener('submit', async (e) => {
       e.preventDefault();
       const email = gate.querySelector('input[type="email"]');
       const val = email ? email.value.trim() : '';
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) { if (email) email.focus(); return; }
+      const data = Object.fromEntries(new FormData(gate).entries());
+      data._subject = 'Futonix — 2026 report early-access signup';
+      try {
+        await fetch('https://formsubmit.co/ajax/yasir@futonix.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(data)
+        });
+      } catch (err) { /* still confirm to the user */ }
       gate.style.display = 'none';
       if (ok) { ok.classList.add('show'); ok.setAttribute('role', 'status'); }
     });

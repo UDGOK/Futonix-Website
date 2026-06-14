@@ -94,10 +94,11 @@
           </aside>
 
           <div data-reveal data-d="1">
-            <!-- To enable in-page sending: create a free form at formspree.io and paste its
-                 endpoint (e.g. https://formspree.io/f/abcdwxyz) into data-endpoint below.
-                 Until then, the form opens a pre-filled email to projects@udgok.com instead. -->
-            <form class="form" data-contact-form data-endpoint="" novalidate>
+            <!-- Submissions email yasir@futonix.com via FormSubmit (no backend needed).
+                 The FIRST submission sends a one-time activation link to that inbox — click it once to start receiving. -->
+            <form class="form" data-contact-form data-endpoint="https://formsubmit.co/ajax/yasir@futonix.com" novalidate>
+              <input type="hidden" name="_subject" value="New Futonix project enquiry" />
+              <input type="hidden" name="_template" value="table" />
               <div class="row-2">
                 <div class="field" data-required><label for="name">Full name</label><input type="text" id="name" name="name" placeholder="Jane Doe" autocomplete="name" /><span class="err"></span></div>
                 <div class="field" data-required><label for="email">Work email</label><input type="email" id="email" name="email" placeholder="jane@company.com" autocomplete="email" /><span class="err"></span></div>
