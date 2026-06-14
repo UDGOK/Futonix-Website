@@ -689,6 +689,20 @@ body.modal-open { overflow: hidden; }
 @keyframes pingEl { 0% { transform: scale(1); opacity: .85; } 100% { transform: scale(2.8); opacity: 0; } }
 @media (max-width: 520px) { .geo-tag { font-size: .64rem; } }
 
+/* ---------- "Ask AI" summary band (footer) ---------- */
+.ai-summary { border-bottom: 1px solid var(--on-line); padding: 28px 0; margin-bottom: 40px; }
+.ai-row { display: flex; align-items: center; justify-content: space-between; gap: 22px; flex-wrap: wrap; }
+.ai-head .ai-k { font-family: var(--mono); font-size: .64rem; letter-spacing: .2em; text-transform: uppercase; color: #5EEAD4; display: block; margin-bottom: 6px; }
+.ai-head h4 { font-family: var(--font); font-weight: 500; font-size: 1.18rem; letter-spacing: -.02em; color: var(--on-dark); }
+.ai-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.ai-links a { display: inline-flex; align-items: center; gap: 7px; font-size: .85rem; font-weight: 500; color: var(--on-dark); padding: 9px 15px; border: 1px solid var(--on-line); border-radius: var(--pill); transition: background .25s var(--ease), border-color .25s, transform .25s var(--ease); }
+.ai-links a svg { width: 13px; height: 13px; opacity: .65; }
+.ai-links a:hover { background: rgba(94,234,212,.12); border-color: #2DD4BF; transform: translateY(-2px); }
+.footer-bottom .legal { color: var(--on-64); }
+.footer-bottom .legal a { color: var(--on-64); transition: color .25s; }
+.footer-bottom .legal a:hover { color: var(--on-dark); }
+@media (max-width: 700px) { .ai-row { flex-direction: column; align-items: flex-start; } }
+
 @media (max-width: 900px) {
   .stat-callouts, .trust-strip { grid-template-columns: repeat(2, 1fr); }
   .loc-grid { grid-template-columns: 1fr; }

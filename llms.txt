@@ -18,25 +18,25 @@ Tennessee, Washington, Arkansas and Missouri, and is resourced to scale to new m
 - Contact: projects@udgok.com
 
 ## Pages
-- [Home](https://futonix.com/index.html): Overview, process, sectors, FAQ.
-- [Expertise](https://futonix.com/expertise.html): Services — design-build, general contracting, construction management, preconstruction, technology & automation, renovation. Built for emerging businesses, new locations and growing operators.
-- [Sectors](https://futonix.com/sectors.html): Healthcare, Warehouse, and Commercial & Technology.
-- [Projects](https://futonix.com/projects.html): Real selected work across the U.S.
-- [Where we work](https://futonix.com/locations.html): U.S. footprint — OK, TN, WA, AR, MO.
-- [About](https://futonix.com/about.html): The design-build approach.
-- [Estimate](https://futonix.com/estimate.html): Interactive estimator — indicative timeline & budget tier; real estimate within 2 business days.
-- [Contact](https://futonix.com/contact.html): Start a project enquiry.
+- [Home](https://futonix.com/): Overview, process, sectors, FAQ.
+- [Expertise](https://futonix.com/expertise): Services — design-build, general contracting, construction management, preconstruction, technology & automation, renovation. Built for emerging businesses, new locations and growing operators.
+- [Sectors](https://futonix.com/sectors): Healthcare, Warehouse, and Commercial & Technology.
+- [Projects](https://futonix.com/projects): Real selected work across the U.S.
+- [Where we work](https://futonix.com/locations): U.S. footprint — OK, TN, WA, AR, MO.
+- [About](https://futonix.com/about): The design-build approach.
+- [Estimate](https://futonix.com/estimate): Interactive estimator — indicative timeline & budget tier; real estimate within 2 business days.
+- [Contact](https://futonix.com/contact): Start a project enquiry.
 
 ## Guides & resources
-- [What is design-build automation?](https://futonix.com/design-build-automation.html): Definition, process and benefits of the single-contract design-build-automation model.
-- [Design-build vs. a traditional general contractor](https://futonix.com/design-build-vs-general-contractor.html): Comparison of the two delivery models.
-- [Smart building controls for healthcare](https://futonix.com/healthcare-building-controls.html): Access, security, data and environmental controls for clinical facilities.
-- [Design-build firm in Oklahoma](https://futonix.com/design-build-oklahoma.html): Oklahoma projects, credentials and coverage.
-- [Knowledge base](https://futonix.com/knowledge-base.html): Searchable FAQs by topic.
-- [BIM for healthcare build-outs](https://futonix.com/bim-for-healthcare.html): Why modeling de-risks clinical construction.
-- [OSHA & clinic build-outs](https://futonix.com/osha-clinic-buildouts.html): How OSHA standards shape clinic construction.
-- [Capabilities line card (PDF)](https://futonix.com/capabilities.html): One-page capabilities summary.
-- [2026 Warehouse Automation report](https://futonix.com/research-2026-warehouse-automation.html): Upcoming benchmark report (register for early access).
+- [What is design-build automation?](https://futonix.com/design-build-automation): Definition, process and benefits of the single-contract design-build-automation model.
+- [Design-build vs. a traditional general contractor](https://futonix.com/design-build-vs-general-contractor): Comparison of the two delivery models.
+- [Smart building controls for healthcare](https://futonix.com/healthcare-building-controls): Access, security, data and environmental controls for clinical facilities.
+- [Design-build firm in Oklahoma](https://futonix.com/design-build-oklahoma): Oklahoma projects, credentials and coverage.
+- [Knowledge base](https://futonix.com/knowledge-base): Searchable FAQs by topic.
+- [BIM for healthcare build-outs](https://futonix.com/bim-for-healthcare): Why modeling de-risks clinical construction.
+- [OSHA & clinic build-outs](https://futonix.com/osha-clinic-buildouts): How OSHA standards shape clinic construction.
+- [Capabilities line card (PDF)](https://futonix.com/capabilities): One-page capabilities summary.
+- [2026 Warehouse Automation report](https://futonix.com/research-2026-warehouse-automation): Upcoming benchmark report (register for early access).
 
 ## Selected projects
 - Dayco (Nashville, TN): Telephone & PA control across a 400,000 sq ft distribution warehouse.

@@ -9,43 +9,43 @@
   (function buildNav() {
     const wrap = document.querySelector('.nav-wrap');
     if (!wrap) return;
-    const here = (location.pathname.split('/').pop() || 'index.html').toLowerCase() || 'index.html';
+    const here = (location.pathname.replace(/\/+$/, '').split('/').pop() || 'index').toLowerCase();
     const SOL = [
-      ['Sectors', 'Healthcare · Warehouse · Commercial', 'sectors.html'],
-      ['Expertise', 'Design-build, GC, CM &amp; automation', 'expertise.html'],
-      ['Projects', 'Selected work across the U.S.', 'projects.html'],
-      ['Design-Build Automation', 'What it is &amp; how it works', 'design-build-automation.html'],
-      ['Healthcare Controls', 'Smart building tech for clinics', 'healthcare-building-controls.html'],
-      ['Project Estimator', 'Indicative timeline &amp; budget', 'estimate.html'],
-      ['Where We Work', 'U.S. reach &amp; global focus', 'locations.html']
+      ['Sectors', 'Healthcare · Warehouse · Commercial', 'sectors'],
+      ['Expertise', 'Design-build, GC, CM &amp; automation', 'expertise'],
+      ['Projects', 'Selected work across the U.S.', 'projects'],
+      ['Design-Build Automation', 'What it is &amp; how it works', 'design-build-automation'],
+      ['Healthcare Controls', 'Smart building tech for clinics', 'healthcare-building-controls'],
+      ['Project Estimator', 'Indicative timeline &amp; budget', 'estimate'],
+      ['Where We Work', 'U.S. reach &amp; global focus', 'locations']
     ];
     const RES = [
-      ['Resources Hub', 'Guides, insights &amp; tools', 'resources.html'],
-      ['Knowledge Base', 'Searchable FAQs by topic', 'knowledge-base.html'],
-      ['Design-Build vs. GC', 'How Futonix compares', 'design-build-vs-general-contractor.html'],
-      ['BIM for Healthcare', 'Technical insight', 'bim-for-healthcare.html'],
-      ['OSHA &amp; Clinic Build-Outs', 'Safety commentary', 'osha-clinic-buildouts.html'],
-      ['2026 Warehouse Report', 'Original research', 'research-2026-warehouse-automation.html'],
-      ['Capabilities (PDF)', 'One-page line card', 'capabilities.html'],
-      ['Design-Build in Oklahoma', 'Local projects &amp; credentials', 'design-build-oklahoma.html']
+      ['Resources Hub', 'Guides, insights &amp; tools', 'resources'],
+      ['Knowledge Base', 'Searchable FAQs by topic', 'knowledge-base'],
+      ['Design-Build vs. GC', 'How Futonix compares', 'design-build-vs-general-contractor'],
+      ['BIM for Healthcare', 'Technical insight', 'bim-for-healthcare'],
+      ['OSHA &amp; Clinic Build-Outs', 'Safety commentary', 'osha-clinic-buildouts'],
+      ['2026 Warehouse Report', 'Original research', 'research-2026-warehouse-automation'],
+      ['Capabilities (PDF)', 'One-page line card', 'capabilities'],
+      ['Design-Build in Oklahoma', 'Local projects &amp; credentials', 'design-build-oklahoma']
     ];
     const chev = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     const inGroup = (a) => a.some(i => i[2] === here);
     const dd = (a) => a.map(i => '<a href="' + i[2] + '"' + (i[2] === here ? ' aria-current="page"' : '') + '><b>' + i[0] + '</b><span>' + i[1] + '</span></a>').join('');
     wrap.innerHTML =
       '<nav class="nav" aria-label="Primary">' +
-        '<a href="index.html" class="brand" aria-label="Futonix — home"><span class="mark" aria-hidden="true"></span>Futonix</a>' +
+        '<a href="/" class="brand" aria-label="Futonix — home"><span class="mark" aria-hidden="true"></span>Futonix</a>' +
         '<ul class="nav-menu">' +
-          '<li><a href="index.html" class="' + (here === 'index.html' ? 'active' : '') + '">Home</a></li>' +
+          '<li><a href="/" class="' + (here === 'index' ? 'active' : '') + '">Home</a></li>' +
           '<li class="has-dropdown' + (inGroup(SOL) ? ' has-active' : '') + '"><button class="nav-trigger" aria-expanded="false" aria-haspopup="true">Solutions ' + chev + '</button>' +
             '<div class="dropdown"><span class="dd-label">What we offer</span><div class="dd-grid">' + dd(SOL) + '</div></div></li>' +
-          '<li><a href="about.html" class="' + (here === 'about.html' ? 'active' : '') + '">About</a></li>' +
+          '<li><a href="about" class="' + (here === 'about' ? 'active' : '') + '">About</a></li>' +
           '<li class="has-dropdown' + (inGroup(RES) ? ' has-active' : '') + '"><button class="nav-trigger" aria-expanded="false" aria-haspopup="true">Resources ' + chev + '</button>' +
             '<div class="dropdown"><span class="dd-label">Guides, insights &amp; tools</span><div class="dd-grid">' + dd(RES) + '</div></div></li>' +
         '</ul>' +
         '<div class="nav-end">' +
-          '<a href="contact.html" class="nav-contact ' + (here === 'contact.html' ? 'active' : '') + '">Contact</a>' +
-          '<a href="contact.html" class="btn btn--primary nav-start" data-magnetic>Start a project</a>' +
+          '<a href="contact" class="nav-contact ' + (here === 'contact' ? 'active' : '') + '">Contact</a>' +
+          '<a href="contact" class="btn btn--primary nav-start" data-magnetic>Start a project</a>' +
           '<button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>' +
         '</div>' +
       '</nav>';
@@ -54,10 +54,10 @@
     if (mob) {
       const mg = (label, a) => '<div class="m-group"><button class="m-trigger" type="button">' + label + ' ' + chev + '</button><div class="m-sub">' + a.map(i => '<a href="' + i[2] + '">' + i[0] + '</a>').join('') + '</div></div>';
       mob.innerHTML =
-        '<a href="index.html">Home</a>' + mg('Solutions', SOL) +
-        '<a href="about.html">About</a>' + mg('Resources', RES) +
-        '<a href="contact.html">Contact</a>' +
-        '<a href="contact.html" class="btn btn--primary">Start a project</a>';
+        '<a href="/">Home</a>' + mg('Solutions', SOL) +
+        '<a href="about">About</a>' + mg('Resources', RES) +
+        '<a href="contact">Contact</a>' +
+        '<a href="contact" class="btn btn--primary">Start a project</a>';
       mob.querySelectorAll('.m-trigger').forEach(t => t.addEventListener('click', () => t.closest('.m-group').classList.toggle('open')));
     }
 
@@ -74,6 +74,40 @@
     });
     document.addEventListener('click', (e) => { if (!e.target.closest('.has-dropdown')) closeAll(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(); });
+  })();
+
+  /* ---- "Ask AI" summary band + legal links (injected into footer) ---- */
+  (function buildAiSummary() {
+    const footer = document.querySelector('.footer');
+    if (!footer || footer.querySelector('.ai-summary')) return;
+    const q = encodeURIComponent('Give me a summary of Futonix (futonix.com) — a U.S. design-build, construction and automation firm. What do they do, which markets and where?');
+    const engines = [
+      ['ChatGPT', 'https://chatgpt.com/?q=' + q],
+      ['Perplexity', 'https://www.perplexity.ai/search?q=' + q],
+      ['Claude', 'https://claude.ai/new?q=' + q],
+      ['Google AI', 'https://www.google.com/search?udm=50&q=' + q],
+      ['Copilot', 'https://copilot.microsoft.com/?q=' + q],
+      ['Grok', 'https://grok.com/?q=' + q]
+    ];
+    const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    const links = engines.map(e => '<a href="' + e[1] + '" target="_blank" rel="noopener nofollow">' + e[0] + arrow + '</a>').join('');
+    const band = document.createElement('div');
+    band.className = 'ai-summary';
+    band.innerHTML =
+      '<div class="container"><div class="ai-row">' +
+        '<div class="ai-head"><span class="ai-k">Ask AI</span><h4>Get an AI summary of Futonix</h4></div>' +
+        '<div class="ai-links">' + links + '</div>' +
+      '</div></div>';
+    footer.insertBefore(band, footer.firstChild);
+
+    // legal links into footer bottom
+    const bottom = footer.querySelector('.footer-bottom');
+    if (bottom && !bottom.querySelector('.legal')) {
+      const legal = document.createElement('span');
+      legal.className = 'legal';
+      legal.innerHTML = '<a href="privacy">Privacy</a> · <a href="security">Security</a>';
+      bottom.appendChild(legal);
+    }
   })();
 
   /* ---- Navbar scroll state ---- */
@@ -328,7 +362,7 @@
         a.textContent = 'Visit website ↗'; actions.appendChild(a);
       }
       const cta = document.createElement('a');
-      cta.className = 'btn btn--primary'; cta.href = 'contact.html'; cta.textContent = 'Start a similar project';
+      cta.className = 'btn btn--primary'; cta.href = 'contact'; cta.textContent = 'Start a similar project';
       actions.appendChild(cta);
 
       modal.hidden = false;
