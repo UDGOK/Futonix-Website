@@ -17,15 +17,15 @@
   <!-- ============ NAV ============ -->
   <div class="nav-wrap">
     <nav class="nav" aria-label="Primary">
-      <div class="nav-left">
-        <a href="sectors.html">Sectors</a>
-        <a href="projects.html">Projects</a>
-        <a href="about.html">About</a>
-      </div>
-      <a href="index.html" class="brand" aria-label="Futonix home"><span class="mark" aria-hidden="true"></span>FUTONIX</a>
-      <div class="nav-right">
-        <a href="contact.html" class="btn btn--ghost">Contact</a>
-        <a href="contact.html" class="btn btn--primary" data-magnetic>Start a project</a>
+      <a href="index.html" class="brand" aria-label="Futonix — home"><span class="mark" aria-hidden="true"></span>Futonix</a>
+      <div class="nav-end">
+        <div class="nav-menu">
+          <a href="sectors.html">Sectors</a>
+          <a href="projects.html">Projects</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <a href="contact.html" class="btn btn--primary nav-start" data-magnetic>Start a project</a>
         <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
       </div>
     </nav>
@@ -42,16 +42,21 @@
     <!-- ============ HERO ============ -->
     <header class="hero">
       <div class="hero-inner">
-        <span class="eyebrow hero-eyebrow" data-reveal>Design · Build · Automation</span>
+        <div class="hero-kicker" data-reveal><span>Design</span><i></i><span>Build</span><i></i><span>Automation</span></div>
         <h1>
           <span class="reveal-mask"><span>The new standard</span></span>
           <span class="reveal-mask" data-d="1"><span>in design&#8209;build.</span></span>
         </h1>
         <p class="lead" data-reveal data-d="2">Engineered speed. Built-in precision. We design, build and automate medical, warehouse and hospitality environments — internationally, end to end.</p>
-        <div class="btn-row" data-reveal data-d="3">
+        <div class="hero-actions" data-reveal data-d="3">
           <a href="contact.html" class="btn btn--primary btn--lg" data-magnetic>Start a project</a>
-          <a href="projects.html" class="btn btn--ghost btn--lg">View our work</a>
+          <a href="projects.html" class="link-arrow">View our work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
+        <ul class="hero-proof" data-reveal data-d="4">
+          <li><strong>180+</strong> Projects delivered</li>
+          <li><strong>14</strong> Countries</li>
+          <li><strong>ISO-grade</strong> Delivery</li>
+        </ul>
       </div>
 
       <!-- Isometric tonal scene (WebGL with SVG fallback) -->
