@@ -1,0 +1,30 @@
+# Futonix
+
+> Futonix is an international design-build and automation firm delivering high-performance
+> medical, warehouse and hospitality facilities end-to-end — one accountable team from
+> design through construction to building automation.
+
+Futonix combines architecture, engineering (MEP), construction and smart-building automation
+under a single contract ("design-build"), removing the handoffs between designer, builder and
+integrator. The firm specialises in three sectors where compliance and performance are
+non-negotiable: Medical & Healthcare, Warehouse & Logistics, and Hospitality & Leisure.
+
+## Key facts
+- Model: integrated design-build + automation (single point of accountability)
+- Sectors: Medical & Healthcare; Warehouse & Logistics; Hospitality & Leisure
+- Reach: international (projects across 14 countries)
+- Differentiators: BIM-led delivery, self-performed trades, smart-building automation, on-time handover
+- Contact: hello@futonix.com
+
+## Pages
+- [Home](https://udgok.github.io/Futonix-Website/index.html): Overview, process, sectors, FAQ.
+- [Sectors](https://udgok.github.io/Futonix-Website/sectors.html): Detail on Medical, Warehouse and Hospitality design-build.
+- [Projects](https://udgok.github.io/Futonix-Website/projects.html): Selected work and outcomes.
+- [About](https://udgok.github.io/Futonix-Website/about.html): The design-build approach and standards.
+- [Contact](https://udgok.github.io/Futonix-Website/contact.html): Start a project enquiry.
+
+## Common questions
+- What is design-build? One contract and one team for both design and construction — faster delivery, fewer gaps, single accountability.
+- Which sectors does Futonix serve? Medical & Healthcare, Warehouse & Logistics, and Hospitality & Leisure.
+- Does Futonix work internationally? Yes — projects delivered across 14 countries.
+- What does "automation" include? Smart building controls, monitoring and integration (HVAC, lighting, access, energy) commissioned at handover.

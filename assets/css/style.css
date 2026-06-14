@@ -369,6 +369,16 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); letter-spacing: -.02em; font-weight:
 .section--dark .faq-q { color: var(--on-dark); }
 .section--dark .faq-a-inner { color: var(--on-64); }
 
+/* ---------- Ratings / reviews ---------- */
+.rating-summary { display: inline-flex; align-items: baseline; gap: 12px; margin-top: 22px; }
+.stars { color: #C2A36B; letter-spacing: 3px; font-size: 1.05rem; line-height: 1; }
+.rating-num { font-family: var(--font); font-weight: 600; font-size: 1.5rem; letter-spacing: -.02em; }
+.rating-meta { color: var(--ink-45); font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; }
+.review-card { display: flex; flex-direction: column; }
+.review-card .stars { display: block; margin-bottom: 16px; }
+.review-card blockquote { font-size: 1.15rem; line-height: 1.5; letter-spacing: -.01em; color: var(--ink); }
+.review-card figcaption { margin-top: 18px; color: var(--ink-45); font-size: .85rem; letter-spacing: .02em; }
+
 /* ---------- Contact form ---------- */
 .contact-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(36px,5vw,72px); align-items: start; }
 .form { display: grid; gap: 18px; }

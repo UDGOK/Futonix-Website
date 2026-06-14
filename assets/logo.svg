@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="80" viewBox="0 0 320 80">
+  <rect width="320" height="80" fill="#D0E1EB"/>
+  <g transform="translate(20,26)" fill="none" stroke="#050419" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M14 0 L25 6 L14 12 L3 6 Z"/>
+    <path d="M3 6 V18 L14 24 V12"/>
+    <path d="M25 6 V18 L14 24"/>
+  </g>
+  <text x="62" y="50" font-family="Geist, Arial, sans-serif" font-size="30" font-weight="600" letter-spacing="6" fill="#050419">FUTONIX</text>
+</svg>
