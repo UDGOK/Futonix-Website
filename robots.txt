@@ -50,4 +50,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://udgok.github.io/Futonix-Website/sitemap.xml
+Sitemap: https://futonix.com/sitemap.xml

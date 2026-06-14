@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Futonix — Design · Build · Automation</title>
-    <link>https://udgok.github.io/Futonix-Website/</link>
-    <atom:link href="https://udgok.github.io/Futonix-Website/feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://futonix.com/</link>
+    <atom:link href="https://futonix.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>U.S. design-build &amp; automation for healthcare, warehouse, commercial and multifamily — plus the technology behind it.</description>
     <language>en</language>
     <lastBuildDate>Sat, 14 Jun 2026 00:00:00 GMT</lastBuildDate>
     <item>
       <title>Dayco — 400,000 sq ft warehouse telecom &amp; PA control (Nashville, TN)</title>
-      <link>https://udgok.github.io/Futonix-Website/projects.html#dayco</link>
+      <link>https://futonix.com/projects.html#dayco</link>
       <guid isPermaLink="false">futonix-project-dayco</guid>
       <pubDate>Sat, 14 Jun 2026 00:00:00 GMT</pubDate>
       <description>Telephone system and PA control engineered across a 400,000 sq ft distribution warehouse.</description>
     </item>
     <item>
       <title>Swift Collision — data, access control &amp; facial-recognition security</title>
-      <link>https://udgok.github.io/Futonix-Website/projects.html#swift</link>
+      <link>https://futonix.com/projects.html#swift</link>
       <guid isPermaLink="false">futonix-project-swift</guid>
       <pubDate>Sat, 14 Jun 2026 00:00:00 GMT</pubDate>
       <description>Data cabling, access control and top-of-the-line security cameras with facial recognition.</description>
     </item>
     <item>
       <title>The Reunion Apartments — historic 80-unit remodel (Tulsa, OK)</title>
-      <link>https://udgok.github.io/Futonix-Website/projects.html#reunion</link>
+      <link>https://futonix.com/projects.html#reunion</link>
       <guid isPermaLink="false">futonix-project-reunion</guid>
       <pubDate>Sat, 14 Jun 2026 00:00:00 GMT</pubDate>
       <description>Complete historic remodel of an 80-unit apartment community.</description>
