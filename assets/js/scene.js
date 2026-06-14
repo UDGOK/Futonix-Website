@@ -7,6 +7,12 @@
    ============================================================ */
 import * as THREE from 'three';
 
+// Palette constants must be declared BEFORE init() runs (init reads them) to
+// avoid a temporal-dead-zone ReferenceError.
+const TONES = [0xEBF2F7, 0xDFEAF1, 0xD2E1EA, 0xC6D9E5];
+const SECTOR = { med: 0x5FB3A1, wh: 0x5B83A8, hos: 0xC2A36B };
+const NAVY = 0x050419, STEEL = 0x2A3242, METAL = 0xC6D9E5, BIM = 0x5EEAD4;
+
 const mount = document.querySelector('.scene-canvas');
 const wrap = document.getElementById('hero-scene');
 
@@ -14,10 +20,6 @@ if (mount && wrap) {
   try { init(mount, wrap); }
   catch (e) { console.warn('Hero 3D unavailable, using SVG fallback:', e); }
 }
-
-const TONES = [0xEBF2F7, 0xDFEAF1, 0xD2E1EA, 0xC6D9E5];
-const SECTOR = { med: 0x5FB3A1, wh: 0x5B83A8, hos: 0xC2A36B };
-const NAVY = 0x050419, STEEL = 0x2A3242, METAL = 0xC6D9E5, BIM = 0x5EEAD4;
 
 function init(mount, wrap) {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
