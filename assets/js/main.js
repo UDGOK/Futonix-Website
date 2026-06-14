@@ -195,6 +195,24 @@
     });
   }
 
+  /* ---- Work filter ---- */
+  const filterBar = document.querySelector('[data-filter-bar]');
+  if (filterBar) {
+    const cards = [...document.querySelectorAll('.work-card')];
+    filterBar.addEventListener('click', (e) => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      cards.forEach(card => {
+        const show = f === 'all' || (card.dataset.cat || '').split(' ').includes(f);
+        card.hidden = !show;
+        if (show) { card.classList.remove('in'); requestAnimationFrame(() => card.classList.add('in')); }
+      });
+    });
+  }
+
   /* ---- Year ---- */
   const y = document.querySelector('[data-year]');
   if (y) y.textContent = new Date().getFullYear();

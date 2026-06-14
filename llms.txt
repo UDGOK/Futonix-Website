@@ -1,36 +1,43 @@
 # Futonix
 
-> Futonix is an international design-build and automation firm delivering high-performance
-> medical, warehouse and hospitality facilities end-to-end — one accountable team from
-> design through construction to building automation.
+> Futonix is a U.S. design-build and automation firm delivering healthcare, warehouse,
+> commercial and multifamily projects end-to-end — plus the technology behind them
+> (structured data, access control, security cameras, PA/telecom, and network & lighting
+> controls). One accountable team handles design, construction and automation.
 
-Futonix combines architecture, engineering (MEP), construction and smart-building automation
-under a single contract ("design-build"), removing the handoffs between designer, builder and
-integrator. The firm specialises in three sectors where compliance and performance are
-non-negotiable: Medical & Healthcare, Warehouse & Logistics, and Hospitality & Leisure.
+Futonix combines architecture, construction and low-voltage/building automation under a
+single contract ("design-build"), removing the handoffs between designer, builder and
+technology integrator. Rooted in Oklahoma, Futonix has delivered projects across Oklahoma,
+Tennessee, Washington, Arkansas and Missouri, and is resourced to scale to new markets.
 
 ## Key facts
-- Model: integrated design-build + automation (single point of accountability)
-- Sectors: Medical & Healthcare; Warehouse & Logistics; Hospitality & Leisure
-- Reach: international (projects across 14 countries)
-- Differentiators: BIM-led delivery, self-performed trades, smart-building automation, on-time handover
+- Model: integrated design-build + technology/automation (single point of accountability)
+- Markets served: Healthcare; Warehouse & Distribution; Commercial & Retail; Multifamily; Technology & Automation
+- Reach: United States — projects in OK, TN, WA, AR, MO; resourced to scale nationwide
+- Capabilities: construction & build-outs, structured data cabling, access control, security cameras (incl. facial recognition), PA/telecom, network & lighting controls, historic remodels
 - Contact: hello@futonix.com
 
 ## Pages
 - [Home](https://udgok.github.io/Futonix-Website/index.html): Overview, process, sectors, FAQ.
-- [Sectors](https://udgok.github.io/Futonix-Website/sectors.html): Detail on Medical, Warehouse and Hospitality design-build.
-- [Projects](https://udgok.github.io/Futonix-Website/projects.html): Selected work and outcomes.
-- [Locations](https://udgok.github.io/Futonix-Website/locations.html): Regional capability — Asia-Pacific, Europe, Middle East, Americas.
-- [About](https://udgok.github.io/Futonix-Website/about.html): The design-build approach and standards.
+- [Sectors](https://udgok.github.io/Futonix-Website/sectors.html): Healthcare, Warehouse, and Commercial & Technology.
+- [Projects](https://udgok.github.io/Futonix-Website/projects.html): Real selected work across the U.S.
+- [Where we work](https://udgok.github.io/Futonix-Website/locations.html): U.S. footprint — OK, TN, WA, AR, MO.
+- [About](https://udgok.github.io/Futonix-Website/about.html): The design-build approach.
 - [Contact](https://udgok.github.io/Futonix-Website/contact.html): Start a project enquiry.
 
-## Case studies
-- [Helix Day-Surgery Centre, Singapore](https://udgok.github.io/Futonix-Website/projects/helix-day-surgery-singapore.html): 6-suite ambulatory surgery centre, ISO-7 theatres, turnkey design-build in 11 months (Medical).
-- [Northgate Fulfilment Hub, Rotterdam](https://udgok.github.io/Futonix-Website/projects/northgate-fulfilment-rotterdam.html): 42,000 m² automated distribution centre with cold-chain zones and rooftop solar (Warehouse).
-- [Lumen Boutique Hotel, Dubai](https://udgok.github.io/Futonix-Website/projects/lumen-boutique-hotel-dubai.html): 88-key lifestyle hotel with full fit-out and smart-room automation (Hospitality).
+## Selected projects
+- Dayco (Nashville, TN): Telephone & PA control across a 400,000 sq ft distribution warehouse.
+- Swift Collision: Data, access control and security cameras with facial recognition.
+- DSN: Complete facility build-out — construction, data and access control.
+- Paradigm Oral Health (Bonney Lake, WA): Oral-surgeon practice build-out.
+- The Eye Institute (Tulsa, OK): Complete ophthalmology practice build-out.
+- The Reunion Apartments (Tulsa, OK): Historic remodel of an 80-unit apartment community.
+- Self-storage portfolio: 400+ units across Rogers & Springdale, AR; Springfield, MO; Moore, OK.
+- 7 Star Distributors (OK): Complete distribution-facility remodel.
+- Specific Systems: Complete network and lighting controls.
+- Shopping Center (Bartlesville, OK); IST Tulsa non-profit pantry build-out; convenience-store build-outs (OK).
 
 ## Common questions
-- What is design-build? One contract and one team for both design and construction — faster delivery, fewer gaps, single accountability.
-- Which sectors does Futonix serve? Medical & Healthcare, Warehouse & Logistics, and Hospitality & Leisure.
-- Does Futonix work internationally? Yes — projects delivered across 14 countries.
-- What does "automation" include? Smart building controls, monitoring and integration (HVAC, lighting, access, energy) commissioned at handover.
+- What is design-build? One contract and one team for design and construction — faster delivery, fewer gaps, single accountability.
+- Where does Futonix work? U.S.-based; projects in Oklahoma, Tennessee, Washington, Arkansas and Missouri; resourced to scale nationwide.
+- What does "automation" include? Structured data, access control, security cameras, PA/telecom, and network & lighting controls — integrated at handover.
