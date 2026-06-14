@@ -40,6 +40,7 @@
       ['Sectors', 'Healthcare · Warehouse · Commercial', 'sectors'],
       ['Expertise', 'Design-build, GC, CM &amp; automation', 'expertise'],
       ['Projects', 'Selected work across the U.S.', 'projects'],
+      ['Robotics', 'Automation &amp; robotics division', 'robotics'],
       ['Design-Build Automation', 'What it is &amp; how it works', 'design-build-automation'],
       ['Healthcare Controls', 'Smart building tech for clinics', 'healthcare-building-controls'],
       ['Project Estimator', 'Indicative timeline &amp; budget', 'estimate'],
