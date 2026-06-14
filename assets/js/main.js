@@ -326,6 +326,41 @@
     render();
   }
 
+  /* ---- Gated report sign-up ---- */
+  const gate = document.querySelector('[data-gate-form]');
+  if (gate) {
+    const ok = gate.parentElement.querySelector('.form-success');
+    gate.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = gate.querySelector('input[type="email"]');
+      const val = email ? email.value.trim() : '';
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) { if (email) email.focus(); return; }
+      gate.style.display = 'none';
+      if (ok) { ok.classList.add('show'); ok.setAttribute('role', 'status'); }
+    });
+  }
+
+  /* ---- Knowledge base search ---- */
+  const kbInput = document.querySelector('[data-kb-search]');
+  if (kbInput) {
+    const items = [...document.querySelectorAll('.kb-group .faq-item')];
+    const groups = [...document.querySelectorAll('.kb-group')];
+    const noRes = document.querySelector('.kb-noresults');
+    kbInput.addEventListener('input', () => {
+      const q = kbInput.value.trim().toLowerCase();
+      let any = false;
+      items.forEach(it => {
+        const show = !q || (it.textContent || '').toLowerCase().includes(q);
+        it.hidden = !show; if (show) any = true;
+      });
+      groups.forEach(g => {
+        const visible = [...g.querySelectorAll('.faq-item')].some(i => !i.hidden);
+        g.classList.toggle('is-empty', !visible);
+      });
+      if (noRes) noRes.classList.toggle('show', !any);
+    });
+  }
+
   /* ---- Year ---- */
   const y = document.querySelector('[data-year]');
   if (y) y.textContent = new Date().getFullYear();
