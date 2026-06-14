@@ -139,6 +139,9 @@ function init(mount, wrap) {
   const fill = new THREE.DirectionalLight(0xBFE6E0, 0.28); fill.position.set(-20, 14, -18); scene.add(fill);
 
   const city = new THREE.Group(); scene.add(city);
+  // nudge along the screen-right axis so the dense skyline sits centered in frame
+  const CITY_OFFX = 2.5, CITY_OFFZ = -2.5;
+  city.position.x = CITY_OFFX; city.position.z = CITY_OFFZ;
 
   // ---- Ground ----
   const ground = new THREE.Mesh(new THREE.PlaneGeometry(HALF * 2, HALF * 2),
