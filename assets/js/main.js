@@ -301,7 +301,7 @@
       const subject = `New enquiry — ${data.sector || 'Project'} — ${data.name}`;
       const body =
         `Name: ${data.name}\nEmail: ${data.email}\nCompany: ${data.company || '—'}\nSector: ${data.sector || '—'}\n\n${data.message}`;
-      window.location.href = `mailto:projects@udgok.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = `mailto:hello@futonix.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       showSuccess();
     };
 
@@ -331,10 +331,10 @@
         if (res.ok) { showSuccess(); }
         else {
           const j = await res.json().catch(() => ({}));
-          showFormError((j.errors && j.errors[0] && j.errors[0].message) || 'Something went wrong. Please email projects@udgok.com.');
+          showFormError((j.errors && j.errors[0] && j.errors[0].message) || 'Something went wrong. Please email hello@futonix.com.');
         }
       } catch (err) {
-        showFormError('Network error. Please email projects@udgok.com directly.');
+        showFormError('Network error. Please email hello@futonix.com directly.');
       } finally {
         setBusy(false);
       }
