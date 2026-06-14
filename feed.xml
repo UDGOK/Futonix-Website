@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Futonix — Design · Build · Automation</title>
+    <link>https://udgok.github.io/Futonix-Website/</link>
+    <atom:link href="https://udgok.github.io/Futonix-Website/feed.xml" rel="self" type="application/rss+xml" />
+    <description>International design-build &amp; automation for medical, warehouse and hospitality. Projects, sectors and insights.</description>
+    <language>en</language>
+    <lastBuildDate>Sat, 14 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Helix Day-Surgery Centre — Singapore (Medical)</title>
+      <link>https://udgok.github.io/Futonix-Website/projects/helix-day-surgery-singapore.html</link>
+      <guid>https://udgok.github.io/Futonix-Website/projects/helix-day-surgery-singapore.html</guid>
+      <pubDate>Sat, 14 Jun 2026 00:00:00 GMT</pubDate>
+      <description>A 6-suite ambulatory surgery centre delivered turnkey in 11 months — ISO-7 theatres and a daylight-led interior.</description>
+    </item>
+    <item>
+      <title>Northgate Fulfilment Hub — Rotterdam (Warehouse)</title>
+      <link>https://udgok.github.io/Futonix-Website/projects/northgate-fulfilment-rotterdam.html</link>
+      <guid>https://udgok.github.io/Futonix-Website/projects/northgate-fulfilment-rotterdam.html</guid>
+      <pubDate>Sat, 14 Jun 2026 00:00:00 GMT</pubDate>
+      <description>42,000 m² automated distribution centre with cold-chain zones and rooftop solar.</description>
+    </item>
+    <item>
+      <title>Lumen Boutique Hotel — Dubai (Hospitality)</title>
+      <link>https://udgok.github.io/Futonix-Website/projects/lumen-boutique-hotel-dubai.html</link>
+      <guid>https://udgok.github.io/Futonix-Website/projects/lumen-boutique-hotel-dubai.html</guid>
+      <pubDate>Sat, 14 Jun 2026 00:00:00 GMT</pubDate>
+      <description>88-key lifestyle hotel — full interior fit-out and smart-room automation.</description>
+    </item>
+  </channel>
+</rss>

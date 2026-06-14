@@ -20,8 +20,14 @@ non-negotiable: Medical & Healthcare, Warehouse & Logistics, and Hospitality & L
 - [Home](https://udgok.github.io/Futonix-Website/index.html): Overview, process, sectors, FAQ.
 - [Sectors](https://udgok.github.io/Futonix-Website/sectors.html): Detail on Medical, Warehouse and Hospitality design-build.
 - [Projects](https://udgok.github.io/Futonix-Website/projects.html): Selected work and outcomes.
+- [Locations](https://udgok.github.io/Futonix-Website/locations.html): Regional capability — Asia-Pacific, Europe, Middle East, Americas.
 - [About](https://udgok.github.io/Futonix-Website/about.html): The design-build approach and standards.
 - [Contact](https://udgok.github.io/Futonix-Website/contact.html): Start a project enquiry.
+
+## Case studies
+- [Helix Day-Surgery Centre, Singapore](https://udgok.github.io/Futonix-Website/projects/helix-day-surgery-singapore.html): 6-suite ambulatory surgery centre, ISO-7 theatres, turnkey design-build in 11 months (Medical).
+- [Northgate Fulfilment Hub, Rotterdam](https://udgok.github.io/Futonix-Website/projects/northgate-fulfilment-rotterdam.html): 42,000 m² automated distribution centre with cold-chain zones and rooftop solar (Warehouse).
+- [Lumen Boutique Hotel, Dubai](https://udgok.github.io/Futonix-Website/projects/lumen-boutique-hotel-dubai.html): 88-key lifestyle hotel with full fit-out and smart-room automation (Hospitality).
 
 ## Common questions
 - What is design-build? One contract and one team for both design and construction — faster delivery, fewer gaps, single accountability.
