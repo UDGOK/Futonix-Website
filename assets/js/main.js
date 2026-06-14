@@ -213,6 +213,71 @@
     });
   }
 
+  /* ---- Project detail modal ---- */
+  const modal = document.getElementById('projModal');
+  if (modal) {
+    const card = modal.querySelector('.modal-card');
+    const logoBox = modal.querySelector('.modal-logo');
+    const actions = modal.querySelector('[data-modal-actions]');
+    const txt = (el) => (el ? el.textContent.trim() : '');
+    const set = (sel, v) => { const e = modal.querySelector(sel); if (e) e.textContent = v; };
+    let lastFocus = null;
+
+    const open = (c) => {
+      lastFocus = c;
+      const client = txt(c.querySelector('.wc-client'));
+      card.style.setProperty('--accent', c.style.getPropertyValue('--accent') || 'var(--ink)');
+      set('[data-modal-cat]', txt(c.querySelector('.wc-cat')));
+      set('[data-modal-title]', client);
+      set('[data-modal-does]', txt(c.querySelector('.wc-does')));
+      set('[data-modal-scope]', txt(c.querySelector('.wc-scope')));
+      set('[data-modal-loc]', txt(c.querySelector('.wc-loc')));
+
+      // logo via favicon service, fallback to monogram
+      const domain = c.dataset.domain;
+      logoBox.innerHTML = '';
+      if (domain) {
+        const img = new Image();
+        img.alt = client + ' logo';
+        img.referrerPolicy = 'no-referrer';
+        img.onerror = () => { logoBox.innerHTML = '<span class="fallback">' + client.charAt(0) + '</span>'; };
+        img.src = 'https://www.google.com/s2/favicons?domain=' + encodeURIComponent(domain) + '&sz=128';
+        logoBox.appendChild(img);
+      } else {
+        logoBox.innerHTML = '<span class="fallback">' + client.charAt(0) + '</span>';
+      }
+
+      // actions
+      actions.innerHTML = '';
+      if (c.dataset.site) {
+        const a = document.createElement('a');
+        a.className = 'btn btn--ghost'; a.href = c.dataset.site; a.target = '_blank'; a.rel = 'noopener noreferrer';
+        a.textContent = 'Visit website ↗'; actions.appendChild(a);
+      }
+      const cta = document.createElement('a');
+      cta.className = 'btn btn--primary'; cta.href = 'contact.html'; cta.textContent = 'Start a similar project';
+      actions.appendChild(cta);
+
+      modal.hidden = false;
+      requestAnimationFrame(() => modal.classList.add('open'));
+      document.body.classList.add('modal-open');
+      modal.querySelector('.modal-close').focus();
+    };
+    const close = () => {
+      modal.classList.remove('open');
+      document.body.classList.remove('modal-open');
+      setTimeout(() => { modal.hidden = true; }, 450);
+      if (lastFocus) lastFocus.focus();
+    };
+
+    document.querySelectorAll('.work-card').forEach(c => {
+      c.addEventListener('click', () => open(c));
+      c.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(c); } });
+    });
+    modal.querySelectorAll('[data-modal-close]').forEach(el => el.addEventListener('click', close));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
+  }
+
   /* ---- Year ---- */
   const y = document.querySelector('[data-year]');
   if (y) y.textContent = new Date().getFullYear();
