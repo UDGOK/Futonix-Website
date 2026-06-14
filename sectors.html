@@ -23,6 +23,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script type="importmap">
+  { "imports": { "three": "./assets/js/vendor/three.module.js" } }
+  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -83,8 +86,11 @@
             </div>
             <div class="btn-row" style="margin-top:34px;"><a href="contact" class="btn btn--primary" data-magnetic>Discuss a medical build</a></div>
           </div>
-          <div class="split-media" data-reveal data-d="1">
-            <svg viewBox="0 0 400 320" aria-hidden="true"><ellipse cx="200" cy="250" rx="150" ry="34" fill="#050419" opacity=".05"/><polygon points="120,120 200,160 200,250 120,210" fill="#CFDFEA"/><polygon points="280,120 200,160 200,250 280,210" fill="#BACFDD"/><polygon points="120,120 200,160 280,120 200,80" fill="#E9F1F6"/><polygon points="190,98 200,103 210,98 200,93" fill="#050419" opacity=".5"/><line x1="140" y1="150" x2="140" y2="225" stroke="#050419" stroke-opacity=".1"/><line x1="170" y1="165" x2="170" y2="240" stroke="#050419" stroke-opacity=".1"/></svg>
+          <div class="split-media has-scene" data-reveal data-d="1">
+            <div class="sector-scene" data-sector="medical">
+              <div class="sector-canvas"></div>
+              <svg class="sector-fallback" viewBox="0 0 400 320" aria-hidden="true"><ellipse cx="200" cy="250" rx="150" ry="34" fill="#050419" opacity=".05"/><polygon points="120,120 200,160 200,250 120,210" fill="#CFDFEA"/><polygon points="280,120 200,160 200,250 280,210" fill="#BACFDD"/><polygon points="120,120 200,160 280,120 200,80" fill="#E9F1F6"/><polygon points="190,98 200,103 210,98 200,93" fill="#050419" opacity=".5"/><line x1="140" y1="150" x2="140" y2="225" stroke="#050419" stroke-opacity=".1"/><line x1="170" y1="165" x2="170" y2="240" stroke="#050419" stroke-opacity=".1"/></svg>
+            </div>
             <div class="media-stat"><div class="num">Clinical</div><div class="label">Build-out standard</div></div>
             <span class="media-tag">Medical &amp; Healthcare</span>
           </div>
@@ -96,8 +102,11 @@
     <section class="section section--alt" id="warehouse">
       <div class="container">
         <div class="split rev">
-          <div class="split-media" data-reveal>
-            <svg viewBox="0 0 400 320" aria-hidden="true"><ellipse cx="200" cy="250" rx="160" ry="34" fill="#050419" opacity=".05"/><polygon points="110,150 200,195 200,255 110,210" fill="#CBDCE7"/><polygon points="290,150 200,195 200,255 290,210" fill="#BACFDD"/><polygon points="110,150 200,195 290,150 200,105" fill="#E6EFF5"/><line x1="135" y1="135" x2="225" y2="180" stroke="#050419" stroke-opacity=".12"/><line x1="165" y1="120" x2="255" y2="165" stroke="#050419" stroke-opacity=".12"/></svg>
+          <div class="split-media has-scene" data-reveal>
+            <div class="sector-scene" data-sector="warehouse">
+              <div class="sector-canvas"></div>
+              <svg class="sector-fallback" viewBox="0 0 400 320" aria-hidden="true"><ellipse cx="200" cy="250" rx="160" ry="34" fill="#050419" opacity=".05"/><polygon points="110,150 200,195 200,255 110,210" fill="#CBDCE7"/><polygon points="290,150 200,195 200,255 290,210" fill="#BACFDD"/><polygon points="110,150 200,195 290,150 200,105" fill="#E6EFF5"/><line x1="135" y1="135" x2="225" y2="180" stroke="#050419" stroke-opacity=".12"/><line x1="165" y1="120" x2="255" y2="165" stroke="#050419" stroke-opacity=".12"/></svg>
+            </div>
             <div class="media-stat"><div class="num">400K</div><div class="label">sq ft warehouse served</div></div>
             <span class="media-tag">Warehouse &amp; Logistics</span>
           </div>
@@ -133,8 +142,11 @@
             </div>
             <div class="btn-row" style="margin-top:34px;"><a href="contact" class="btn btn--primary" data-magnetic>Discuss a commercial or tech project</a></div>
           </div>
-          <div class="split-media" data-reveal data-d="1">
-            <svg viewBox="0 0 400 320" aria-hidden="true"><ellipse cx="200" cy="252" rx="140" ry="32" fill="#050419" opacity=".05"/><polygon points="135,130 200,162 200,258 135,226" fill="#CBDCE7"/><polygon points="265,130 200,162 200,258 265,226" fill="#BACFDD"/><polygon points="135,130 200,162 265,130 200,98" fill="#E6EFF5"/><line x1="155" y1="148" x2="155" y2="240" stroke="#050419" stroke-opacity=".1"/><line x1="178" y1="160" x2="178" y2="252" stroke="#050419" stroke-opacity=".1"/></svg>
+          <div class="split-media has-scene" data-reveal data-d="1">
+            <div class="sector-scene" data-sector="commercial">
+              <div class="sector-canvas"></div>
+              <svg class="sector-fallback" viewBox="0 0 400 320" aria-hidden="true"><ellipse cx="200" cy="252" rx="140" ry="32" fill="#050419" opacity=".05"/><polygon points="135,130 200,162 200,258 135,226" fill="#CBDCE7"/><polygon points="265,130 200,162 200,258 265,226" fill="#BACFDD"/><polygon points="135,130 200,162 265,130 200,98" fill="#E6EFF5"/><line x1="155" y1="148" x2="155" y2="240" stroke="#050419" stroke-opacity=".1"/><line x1="178" y1="160" x2="178" y2="252" stroke="#050419" stroke-opacity=".1"/></svg>
+            </div>
             <div class="media-stat"><div class="num">Low-V</div><div class="label">Data · security · controls</div></div>
             <span class="media-tag">Commercial &amp; Technology</span>
           </div>
@@ -175,5 +187,6 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script type="module" src="assets/js/sectors.js"></script>
 </body>
 </html>
