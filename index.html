@@ -29,12 +29,10 @@
   { "imports": { "three": "./assets/js/vendor/three.module.js" } }
   </script>
 
-  <!-- ============================================================
-       STRUCTURED DATA (schema.org JSON-LD) for AI / answer engines.
-       ⚠️ REPLACE the aggregateRating + review blocks below with REAL,
-       verifiable reviews (e.g. from Google Business Profile) before
-       publishing. Fabricated ratings violate Google / AI policies.
-       ============================================================ -->
+  <!-- Structured data (schema.org JSON-LD) for AI / answer engines.
+       No rating/review markup is used until real, verified client reviews exist
+       (fabricated ratings violate Google / AI policies). Add Review nodes here
+       once clients approve testimonials. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -72,27 +70,10 @@
         "description": "Design-build and automation across healthcare, warehouse, commercial and multifamily — plus low-voltage technology — one accountable U.S. team from design to switched-on.",
         "priceRange": "$$$",
         "areaServed": { "@type": "Country", "name": "United States" },
-        "serviceType": ["Design-build construction", "Building automation", "Architecture & engineering"],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "37",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
-        "review": [
-          {
-            "@type": "Review",
-            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-            "author": { "@type": "Person", "name": "PLACEHOLDER — replace with real reviewer" },
-            "reviewBody": "PLACEHOLDER — paste a genuine client review here before publishing."
-          },
-          {
-            "@type": "Review",
-            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-            "author": { "@type": "Person", "name": "PLACEHOLDER — replace with real reviewer" },
-            "reviewBody": "PLACEHOLDER — paste a genuine client review here before publishing."
-          }
+        "serviceType": ["Design-build construction", "General contracting", "Construction management", "Building automation", "Low-voltage & security systems"],
+        "hasCredential": [
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "PMP — Project Management Professional (PMI)" },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "OSHA safety compliance" }
         ]
       },
       {
@@ -143,7 +124,7 @@
       <a href="index.html" class="brand" aria-label="Futonix — home"><span class="mark" aria-hidden="true"></span>Futonix</a>
       <div class="nav-end">
         <div class="nav-menu">
-          <a href="sectors.html">Sectors</a>
+          <a href="sectors.html">Sectors</a><a href="expertise.html">Expertise</a>
           <a href="projects.html">Projects</a><a href="locations.html">Locations</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
@@ -154,7 +135,7 @@
     </nav>
   </div>
   <div class="mobile-menu" aria-label="Mobile">
-    <a href="sectors.html">Sectors</a>
+    <a href="sectors.html">Sectors</a><a href="expertise.html">Expertise</a>
     <a href="projects.html">Projects</a><a href="locations.html">Locations</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
@@ -439,46 +420,19 @@
       </div>
     </section>
 
-    <!-- ============ TRUST / YMYL (replace bracketed values with verified credentials) ============ -->
-    <section class="section--tight">
-      <div class="container">
-        <div class="section-head center" data-reveal>
-          <span class="eyebrow" style="justify-content:center;">Trust &amp; compliance</span>
-          <h2>Built on credentials.</h2>
-        </div>
-        <div class="trust-strip" data-reveal>
-          <div class="trust-item"><span class="k">Experience</span><span class="v">[X]+ years</span></div>
-          <div class="trust-item"><span class="k">Licensing</span><span class="v">[Contractor licenses]</span></div>
-          <div class="trust-item"><span class="k">Insurance &amp; bonding</span><span class="v">[GL · WC · Bonded]</span></div>
-          <div class="trust-item"><span class="k">Safety record</span><span class="v">[EMR / OSHA]</span></div>
-        </div>
-        <p class="muted center" style="margin-top:18px; font-size:.84rem;">Replace bracketed values with your verified licenses, insurance, bonding capacity and safety record.</p>
-      </div>
-    </section>
 
-    <!-- ============ RATINGS / REVIEWS (replace placeholders with real reviews) ============ -->
-    <section class="section">
+    <!-- ============ CREDENTIALS (PMP / OSHA) ============ -->
+    <section class="section" id="credentials">
       <div class="container">
         <div class="section-head center" data-reveal>
-          <span class="eyebrow" style="justify-content:center;">Client outcomes</span>
-          <h2>Rated for delivery.</h2>
-          <div class="rating-summary">
-            <span class="stars" aria-hidden="true">★★★★★</span>
-            <span class="rating-num">4.9</span>
-            <span class="rating-meta">average · 37 reviews</span>
-          </div>
+          <span class="eyebrow" style="justify-content:center;">Credentials &amp; standards</span>
+          <h2>Built to a professional standard.</h2>
         </div>
-        <div class="grid grid-2">
-          <figure class="card review-card" data-reveal data-d="1">
-            <span class="stars" aria-hidden="true">★★★★★</span>
-            <blockquote>“PLACEHOLDER — replace with a real, verifiable client review before publishing.”</blockquote>
-            <figcaption>— Client name, Title, Company</figcaption>
-          </figure>
-          <figure class="card review-card" data-reveal data-d="2">
-            <span class="stars" aria-hidden="true">★★★★★</span>
-            <blockquote>“PLACEHOLDER — replace with a real, verifiable client review before publishing.”</blockquote>
-            <figcaption>— Client name, Title, Company</figcaption>
-          </figure>
+        <div class="cred-grid">
+          <div class="cred-badge" data-reveal><div class="seal solid">PMP®</div><h3>PMP Certified</h3><p>Project Management Professional (PMI) — disciplined scope, schedule and cost control on every build.</p></div>
+          <div class="cred-badge" data-reveal data-d="1"><div class="seal">OSHA</div><h3>OSHA Compliant</h3><p>OSHA-trained safety practices on every site — protecting crews, clients and timelines.</p></div>
+          <div class="cred-badge" data-reveal data-d="2"><div class="seal">3-in-1</div><h3>Design · Build · Automate</h3><p>One accountable team for design, construction and the technology behind the building.</p></div>
+          <div class="cred-badge" data-reveal data-d="3"><div class="seal">✓</div><h3>References on request</h3><p>Verified client references available — just ask and we'll connect you.</p></div>
         </div>
       </div>
     </section>
